@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mood Music Player</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 30px;
+    background-color: #f0f0f0;
+  }
+  h1 {
+    color: #333;
+  }
+  select, button {
+    padding: 10px;
+    font-size: 16px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  .message {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #555;
+  }
+</style>
+</head>
+<body>
+
+<h1>🎵 Mood Music Player</h1>
+
+<select id="mood">
+  <option value="">--Select Mood--</option>
+  <option value="happy">😊 Happy</option>
+  <option value="sad">😢 Sad</option>
+  <option value="chill">😌 Chill</option>
+</select>
+
+<button onclick="showMood()">Show Mood Song</button>
+
+<div class="message" id="message"></div>
+
+<script>
+function showMood() {
+  const mood = document.getElementById("mood").value;
+  const message = document.getElementById("message");
+
+  if (!mood) {
+    message.textContent = "Please select a mood!";
+    return;
+  }
+
+  if (mood === "happy") {
+    message.textContent = "🎶 Playing: Happy Vibes Song";
+  } else if (mood === "sad") {
+    message.textContent = "🎶 Playing: Sad Melody Song";
+  } else if (mood === "chill") {
+    message.textContent = "🎶 Playing: Chill Beats Song";
+  }
+}
+</script>
+
+</body>
+</html>
